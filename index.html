@@ -12,7 +12,6 @@
             min-height: 100vh;
         }
         
-        /* Instagram-like Header */
         .header {
             position: sticky;
             top: 0;
@@ -23,23 +22,10 @@
             align-items: center;
             z-index: 100;
         }
-        .header h1 {
-            color: white;
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-        .header-icons {
-            display: flex;
-            gap: 15px;
-        }
-        .header-icon {
-            color: white;
-            font-size: 22px;
-            cursor: pointer;
-        }
+        .header h1 { color: white; font-size: 22px; font-weight: 700; }
+        .header-icons { display: flex; gap: 15px; }
+        .header-icon { color: white; font-size: 22px; }
         
-        /* Story-like Section */
         .stories {
             background: #000;
             padding: 12px 0;
@@ -52,194 +38,62 @@
         }
         .stories::-webkit-scrollbar { display: none; }
         
-        .story {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            min-width: 68px;
-            cursor: pointer;
-        }
+        .story { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 68px; }
         .story-ring {
-            width: 66px;
-            height: 66px;
-            border-radius: 50%;
-            padding: 3px;
+            width: 66px; height: 66px; border-radius: 50%; padding: 3px;
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         }
-        .story-ring.gray {
-            background: #262626;
-        }
+        .story-ring.gray { background: #262626; }
         .story-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 60px; height: 60px; border-radius: 50%; background: #000;
+            display: flex; align-items: center; justify-content: center;
             font-size: 24px;
         }
-        .story-name {
-            color: #f5f5f5;
-            font-size: 11px;
-            max-width: 64px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
+        .story-name { color: #f5f5f5; font-size: 11px; max-width: 64px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         
-        /* Feed */
-        .feed {
-            background: #000;
-        }
-        
-        /* Post Header */
-        .post-header {
-            display: flex;
-            align-items: center;
-            padding: 10px 12px;
-            gap: 10px;
-        }
+        .post-header { display: flex; align-items: center; padding: 10px 12px; gap: 10px; }
         .post-avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
+            width: 32px; height: 32px; border-radius: 50%;
             background: linear-gradient(45deg, #f09433, #bc1888);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 14px;
-            font-weight: 600;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 14px; font-weight: 600;
         }
-        .post-user {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .post-username {
-            color: #f5f5f5;
-            font-size: 13px;
-            font-weight: 600;
-        }
-        .post-location {
-            color: #a8a8a8;
-            font-size: 11px;
-        }
-        .post-more {
-            color: #f5f5f5;
-            font-size: 18px;
-        }
+        .post-user { flex: 1; display: flex; flex-direction: column; }
+        .post-username { color: #f5f5f5; font-size: 13px; font-weight: 600; }
+        .post-location { color: #a8a8a8; font-size: 11px; }
+        .post-more { color: #f5f5f5; font-size: 18px; }
         
-        /* Post Image */
         .post-image {
-            width: 100%;
-            aspect-ratio: 4/5;
-            background: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
+            width: 100%; aspect-ratio: 4/5; background: #1a1a1a;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 48px; cursor: pointer;
         }
         
-        /* Post Actions */
-        .post-actions {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 12px;
-        }
-        .post-actions-left {
-            display: flex;
-            gap: 16px;
-        }
-        .action-icon {
-            font-size: 24px;
-            cursor: pointer;
-        }
+        .post-actions { display: flex; justify-content: space-between; padding: 10px 12px; }
+        .post-actions-left { display: flex; gap: 16px; }
+        .action-icon { font-size: 24px; cursor: pointer; }
         
-        /* Post Info */
-        .post-info {
-            padding: 0 12px 12px;
-        }
-        .post-likes {
-            color: #f5f5f5;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-        .post-caption {
-            color: #f5f5f5;
-            font-size: 13px;
-            line-height: 1.4;
-        }
-        .post-caption .username {
-            font-weight: 600;
-            margin-right: 6px;
-        }
-        .post-time {
-            color: #a8a8a8;
-            font-size: 10px;
-            margin-top: 6px;
-            text-transform: uppercase;
-        }
+        .post-info { padding: 0 12px 12px; }
+        .post-likes { color: #f5f5f5; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+        .post-caption { color: #f5f5f5; font-size: 13px; line-height: 1.4; }
+        .post-caption .username { font-weight: 600; margin-right: 6px; }
+        .post-time { color: #a8a8a8; font-size: 10px; margin-top: 6px; }
         
-        /* Tab Bar */
+        .news-post { background: #000; margin-bottom: 0; border-bottom: 1px solid #262626; cursor: pointer; }
+        
         .tab-bar {
-            position: sticky;
-            bottom: 0;
-            background: #000;
+            position: sticky; bottom: 0; background: #000;
             border-top: 1px solid #262626;
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
+            display: flex; justify-content: space-around; padding: 10px 0;
         }
-        .tab-icon {
-            font-size: 24px;
-            color: #f5f5f5;
-            cursor: pointer;
-        }
-        .tab-icon.active {
-            color: #f5f5f5;
-        }
+        .tab-icon { font-size: 24px; color: #f5f5f5; cursor: pointer; }
         .tab-avatar {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
+            width: 24px; height: 24px; border-radius: 50%;
             background: linear-gradient(45deg, #f09433, #bc1888);
-        }
-        
-        /* News Items styled as Posts */
-        .news-post {
-            background: #000;
-            margin-bottom: 0;
-            border-bottom: 1px solid #262626;
-        }
-        .news-title-text {
-            color: #f5f5f5;
-            font-size: 14px;
-            line-height: 1.4;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        
-        /* Hashtag style */
-        .hashtag {
-            color: #00376b;
-        }
-        
-        /* Loading */
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #a8a8a8;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <div class="header">
         <h1>📰 HK01</h1>
         <div class="header-icons">
@@ -248,143 +102,64 @@
         </div>
     </div>
     
-    <!-- Stories -->
     <div class="stories">
-        <div class="story">
-            <div class="story-ring">
-                <div class="story-img">🔥</div>
-            </div>
+        <div class="story" onclick="alert('熱話分類')">
+            <div class="story-ring"><div class="story-img">🔥</div></div>
             <span class="story-name">熱話</span>
         </div>
-        <div class="story">
-            <div class="story-ring gray">
-                <div class="story-img">💰</div>
-            </div>
+        <div class="story" onclick="alert('財經分類')">
+            <div class="story-ring gray"><div class="story-img">💰</div></div>
             <span class="story-name">財經</span>
         </div>
-        <div class="story">
-            <div class="story-ring gray">
-                <div class="story-img">⚽</div>
-            </div>
+        <div class="story" onclick="alert('體育分類')">
+            <div class="story-ring gray"><div class="story-img">⚽</div></div>
             <span class="story-name">體育</span>
         </div>
-        <div class="story">
-            <div class="story-ring gray">
-                <div class="story-img">🎬</div>
-            </div>
+        <div class="story" onclick="alert('娛樂分類')">
+            <div class="story-ring gray"><div class="story-img">🎬</div></div>
             <span class="story-name">娛樂</span>
         </div>
-        <div class="story">
-            <div class="story-ring gray">
-                <div class="story-img">✈️</div>
-            </div>
+        <div class="story" onclick="alert('旅遊分類')">
+            <div class="story-ring gray"><div class="story-img">✈️</div></div>
             <span class="story-name">旅遊</span>
         </div>
-        <div class="story">
-            <div class="story-ring gray">
-                <div class="story-img">📱</div>
-            </div>
+        <div class="story" onclick="alert('科技分類')">
+            <div class="story-ring gray"><div class="story-img">📱</div></div>
             <span class="story-name">科技</span>
         </div>
-        <div class="story">
-            <div class="story-ring gray">
-                <div class="story-img">🍜</div>
-            </div>
+        <div class="story" onclick="alert('美食分類')">
+            <div class="story-ring gray"><div class="story-img">🍜</div></div>
             <span class="story-name">美食</span>
         </div>
     </div>
     
-    <!-- Feed -->
-    <div class="feed" id="feed">
-        <!-- Posts will be added by JS -->
-    </div>
+    <div id="feed"></div>
     
-    <!-- Tab Bar -->
     <div class="tab-bar">
-        <span class="tab-icon">🏠</span>
-        <span class="tab-icon">🔍</span>
-        <span class="tab-icon">➕</span>
-        <span class="tab-icon">❤️</span>
+        <span class="tab-icon" onclick="alert('首頁')">🏠</span>
+        <span class="tab-icon" onclick="alert('搜尋')">🔍</span>
+        <span class="tab-icon" onclick="alert('發佈')">➕</span>
+        <span class="tab-icon" onclick="alert('通知')">❤️</span>
         <div class="tab-avatar"></div>
     </div>
     
     <script>
         const newsData = [
-            {
-                title: '特朗普：與習近平討論對台軍售問題　很快作出決定',
-                category: '國際',
-                emoji: '🌍',
-                likes: '2.3K',
-                time: '2小時前'
-            },
-            {
-                title: '阿伯攜行李上巴士被拒！發爛渣不准開車：X你老X　車長咁做惹爭議',
-                category: '熱話',
-                emoji: '🔥',
-                likes: '5.8K',
-                time: '2小時前'
-            },
-            {
-                title: '國防部年初一發MV《時刻準備著》　展現四軍備戰威懾力',
-                category: '中國',
-                emoji: '🇨🇳',
-                likes: '1.2K',
-                time: '3小時前'
-            },
-            {
-                title: '天文台料冷鋒周四來襲　周五六市區降至13度',
-                category: '天氣',
-                emoji: '🌤️',
-                likes: '3.4K',
-                time: '3小時前'
-            },
-            {
-                title: '香港迪士尼淨虧損收窄至21億　有信心2027年回本',
-                category: '財經',
-                emoji: '💰',
-                likes: '890',
-                time: '4小時前'
-            },
-            {
-                title: '維園年宵市場人流暢旺　市民排隊搶購寓意「發財」年桔',
-                category: '活動',
-                emoji: '🧧',
-                likes: '4.1K',
-                time: '5小時前'
-            },
-            {
-                title: '日本最新入境新規　港人免ETA電子申報延至4月',
-                category: '旅遊',
-                emoji: '✈️',
-                likes: '2.7K',
-                time: '5小時前'
-            },
-            {
-                title: 'iPhone 16 Pro Max 512GB減價至HK$9,299　先達舖：因乜嘢原因話減就減？',
-                category: '科技',
-                emoji: '📱',
-                likes: '1.9K',
-                time: '6小時前'
-            }
+            { title: '特朗普：與習近平討論對台軍售問題　很快作出決定', category: '國際', emoji: '🌍', likes: '2.3K', time: '2小時前', link: 'https://www.hk01.com/即時國際/60323030/特朗普-與習近平討論對台軍售問題-很快作出決定' },
+            { title: '阿伯攜行李上巴士被拒！發爛渣不准開車：X你老X', category: '熱話', emoji: '🔥', likes: '5.8K', time: '2小時前', link: 'https://www.hk01.com/熱爆話題/60322782/阿伯攜行李上巴士被拒-發爛渣不准開車-x你老x-車長咁做惹爭議' },
+            { title: '國防部年初一發MV《時刻準備著》　展現四軍備戰威懾力', category: '中國', emoji: '🇨🇳', likes: '1.2K', time: '3小時前', link: 'https://www.hk01.com/即時中國/60323020/國防部年初一發mv-時刻準備著-展現四軍備戰威懾力' },
+            { title: '天文台料冷鋒周四來襲　周五六市區降至13度', category: '天氣', emoji: '🌤️', likes: '3.4K', time: '3小時前', link: 'https://www.hk01.com/生活資訊/60322953/天文台料冷鋒周四來襲-周五六市區降至13度-高地或結冰' },
+            { title: '香港迪士尼淨虧損收窄至21億　有信心2027年回本', category: '財經', emoji: '💰', likes: '890', time: '4小時前', link: 'https://www.hk01.com/財經快訊/60322685/香港迪士尼淨虧損收窄至21億-有信心2027年回本' },
+            { title: '維園年宵市場人流暢旺　市民排隊搶購寓意「發財」年桔', category: '活動', emoji: '🧧', likes: '4.1K', time: '5小時前', link: 'https://www.hk01.com/熱爆話題/60322598/年宵市場人流暢旺-市民排隊搶購寓意發財年桔' },
+            { title: '日本最新入境新規　港人免ETA電子申報延至4月', category: '旅遊', emoji: '✈️', likes: '2.7K', time: '5小時前', link: 'https://www.hk01.com/旅遊趣談/60322706/日本最新入境新規-港人免ETA電子申報延至4月' },
+            { title: 'iPhone 16 Pro Max 512GB減價至HK$9,299', category: '科技', emoji: '📱', likes: '1.9K', time: '6小時前', link: 'https://www.hk01.com/數碼生活/60322603/iPhone-16-Pro-Max-512GB減價至HK-9-299-先達舖-因乜嘢原因話減就減' }
         ];
         
-        const links = [
-            'https://www.hk01.com/即時國際/60323030/特朗普-與習近平討論對台軍售問題-很快作出決定',
-            'https://www.hk01.com/熱爆話題/60322782/阿伯攜行李上巴士被拒-發爛渣不准開車-x你老x-車長咁做惹爭議',
-            'https://www.hk01.com/即時中國/60323020/國防部年初一發mv-時刻準備著-展現四軍備戰威懾力',
-            'https://www.hk01.com/生活資訊/60322953/天文台料冷鋒周四來襲-周五六市區降至13度-高地或結冰',
-            'https://www.hk01.com/財經快訊/60322685/香港迪士尼淨虧損收窄至21億-有信心2027年回本',
-            'https://www.hk01.com/熱爆話題/60322598/年宵市場人流暢旺-市民排隊搶購寓意發財年桔',
-            'https://www.hk01.com/旅遊趣談/60322706/日本最新入境新規-港人免ETA電子申報延至4月',
-            'https://www.hk01.com/數碼生活/60322603/iPhone-16-Pro-Max-512GB減價至HK-9-299-先達舖-因乜嘢原因話減就減'
-        ];
-        
-        const feed = document.getElementById('feed');
         let html = '';
         
-        newsData.forEach((news, i) => {
+        newsData.forEach((news) => {
             html += `
-                <div class="news-post">
+                <div class="news-post" onclick="window.location.href='${news.link}'">
                     <div class="post-header">
                         <div class="post-avatar">${news.emoji}</div>
                         <div class="post-user">
@@ -393,16 +168,14 @@
                         </div>
                         <span class="post-more">•••</span>
                     </div>
-                    <div class="post-image" onclick="window.open('${links[i]}', '_blank')">
-                        ${news.emoji}
-                    </div>
+                    <div class="post-image">${news.emoji}</div>
                     <div class="post-actions">
                         <div class="post-actions-left">
-                            <span class="action-icon">❤️</span>
-                            <span class="action-icon">💬</span>
-                            <span class="action-icon">✈️</span>
+                            <span class="action-icon" onclick="event.stopPropagation(); alert('讚好')">❤️</span>
+                            <span class="action-icon" onclick="event.stopPropagation(); alert('留言')">💬</span>
+                            <span class="action-icon" onclick="event.stopPropagation(); alert('分享')">✈️</span>
                         </div>
-                        <span class="action-icon">🔖</span>
+                        <span class="action-icon" onclick="event.stopPropagation(); alert('收藏')">🔖</span>
                     </div>
                     <div class="post-info">
                         <div class="post-likes">${news.likes} 個讚</div>
@@ -416,7 +189,7 @@
             `;
         });
         
-        feed.innerHTML = html;
+        document.getElementById('feed').innerHTML = html;
     </script>
 </body>
 </html>

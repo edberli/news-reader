@@ -3,236 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📰 HK01 新聞閱讀器</title>
+    <title>📰 HK01 新聞</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background: #f5f5f5;
             min-height: 100vh;
             padding: 15px;
         }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        .container { max-width: 600px; margin: 0 auto; }
         h1 {
             text-align: center;
-            color: #333;
+            color: #E74C3C;
             margin-bottom: 15px;
-            font-size: 22px;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            gap: 10px;
+            font-size: 20px;
         }
         .refresh-btn {
-            padding: 10px 16px;
+            display: block;
+            width: 100%;
+            padding: 12px;
             background: #E74C3C;
             color: white;
             border: none;
             border-radius: 8px;
             font-size: 14px;
+            margin-bottom: 15px;
             cursor: pointer;
-            white-space: nowrap;
-        }
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #666;
         }
         .news-item {
             background: white;
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 14px;
             margin-bottom: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
             cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .news-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
         }
         .news-title {
             font-size: 15px;
             font-weight: 600;
             color: #333;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             line-height: 1.4;
         }
         .news-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             font-size: 12px;
             color: #888;
-        }
-        .news-time {
-            color: #666;
-        }
-        .last-updated {
-            text-align: center;
-            color: #888;
-            font-size: 12px;
-            margin-top: 15px;
-            padding: 10px;
-        }
-        .error-msg {
-            text-align: center;
-            padding: 30px;
-            color: #E74C3C;
-            background: white;
-            border-radius: 12px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>📰 HK01 最新新聞</h1>
-        
-        <div class="header">
-            <span style="font-size:14px;color:#666;">點擊標題睇全文</span>
-            <button class="refresh-btn" onclick="fetchNews()">🔄 刷新</button>
+        <h1>📰 HK01 熱門新聞</h1>
+        <button class="refresh-btn" onclick="location.reload()">🔄 刷新頁面</button>
+        <div id="news">
+            <div class="news-item">
+                <div class="news-title">特朗普：與習近平討論對台軍售問題　很快作出決定</div>
+                <div class="news-meta">即時國際 · 12:02</div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">阿伯攜行李上巴士被拒！發爛渣不准開車：X你老X</div>
+                <div class="news-meta">熱爆話題 · 12:02</div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">國防部年初一發MV《時刻準備著》　展現四軍備戰威懾力</div>
+                <div class="news-meta">即時中國 · 12:00</div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">政府就珊瑚白化發公函　私人業主有責移除</div>
+                <div class="news-meta">區域新聞 · 11:30</div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">天文台料冷鋒周四來襲　周五六市區降至13度</div>
+                <div class="news-meta">生活資訊 · 11:00</div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">美斯缺陣｜當局拘4人　涉向球迷賣假飛</div>
+                <div class="news-meta">體育 · 10:30</div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">香港迪士尼淨虧損收窄至21億　有信心2027年回本</div>
+                <div class="news-meta">財經快訊 · 10:00</div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">維園年宵市場人流暢旺　市民排隊搶購寓意「發財」年桔</div>
+                <div class="news-meta">熱爆話題 · 09:30</div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">日本最新入境新規　港人免ETA電子申報延至4月</div>
+                <div class="news-meta">旅遊趣談 · 09:00</div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">iPhone 16 Pro Max 512GB減價至HK$9,299</div>
+                <div class="news-meta">數碼生活 · 08:30</div>
+            </div>
         </div>
-        
-        <div id="content">
-            <div class="loading">載入緊...</div>
-        </div>
-        
-        <div class="last-updated" id="lastUpdated"></div>
     </div>
-
     <script>
-        let newsData = [];
+        // Add click handlers
+        const links = [
+            'https://www.hk01.com/即時國際/60323030/特朗普-與習近平討論對台軍售問題-很快作出決定',
+            'https://www.hk01.com/熱爆話題/60322782/阿伯攜行李上巴士被拒-發爛渣不准開車-x你老x-車長咁做惹爭議',
+            'https://www.hk01.com/即時中國/60323020/國防部年初一發mv-時刻準備著-展現四軍備戰威懾力',
+            'https://www.hk01.com/區域新聞/60322859/政府就珊瑚白化發公函-私人業主有責移除',
+            'https://www.hk01.com/生活資訊/60322953/天文台料冷鋒周四來襲-周五六市區降至13度-高地或結冰',
+            'https://www.hk01.com/體育/60322830/美斯缺陣當局拘4人-涉向球迷賣假飛-票務公司遭警告',
+            'https://www.hk01.com/財經快訊/60322685/香港迪士尼淨虧損收窄至21億-有信心2027年回本',
+            'https://www.hk01.com/熱爆話題/60322598/年宵市場人流暢旺-市民排隊搶購寓意發財年桔',
+            'https://www.hk01.com/旅遊趣談/60322706/日本最新入境新規-港人免ETA電子申報延至4月',
+            'https://www.hk01.com/數碼生活/60322603/iPhone-16-Pro-Max-512GB減價至HK-9-299-先達舖-因乜嘢原因話減就減'
+        ];
         
-        async function fetchNews() {
-            const content = document.getElementById('content');
-            content.innerHTML = '<div class="loading">載入緊...</div>';
-            
-            try {
-                // Use sitemap as data source - fetch directly
-                const sitemapUrl = 'https://www.hk01.com/sitemap.xml';
-                
-                // Try using allorigins as CORS proxy
-                const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(sitemapUrl);
-                
-                const response = await fetch(proxyUrl);
-                const text = await response.text();
-                
-                const parser = new DOMParser();
-                const xml = parser.parseFromString(text, 'text/xml');
-                const urls = xml.querySelectorAll('url');
-                
-                let news = [];
-                
-                urls.forEach((url, index) => {
-                    if (index >= 30) return; // Limit to 30 items
-                    
-                    const loc = url.querySelector('loc')?.textContent || '';
-                    const newsData = url.querySelector('news\\:news news');
-                    const title = newsData?.querySelector('news\\:title title')?.textContent || 
-                                url.querySelector('title')?.textContent || '';
-                    const pubDate = newsData?.querySelector('news\\:publication_date publication_date')?.textContent || 
-                                  url.querySelector('pubDate')?.textContent || '';
-                    
-                    if (title && loc) {
-                        news.push({
-                            title: title,
-                            link: loc,
-                            date: pubDate
-                        });
-                    }
-                });
-                
-                displayNews(news);
-                
-            } catch (error) {
-                console.error('Error:', error);
-                // Try alternative method
-                tryAlternative();
-            }
-        }
-        
-        async function tryAlternative() {
-            const content = document.getElementById('content');
-            
-            // Try fetching from different proxy
-            try {
-                const urls = [
-                    'https://www.hk01.com/sitemap.xml',
-                    'https://www.hk01.com/feed'
-                ];
-                
-                // Sample news for demo when API fails
-                const sampleNews = [
-                    { title: '特朗普：與習近平討論對台軍售問題　很快作出決定', link: 'https://www.hk01.com/即時國際/60323030/特朗普-與習近平討論對台軍售問題-很快作出決定', date: '2026-02-17T12:02:28+08:00' },
-                    { title: '阿伯攜行李上巴士被拒！發爛渣不准開車：X你老X', link: 'https://www.hk01.com/熱爆話題/60322782/阿伯攜行李上巴士被拒-發爛渣不准開車-x你老x-車長咁做惹爭議', date: '2026-02-17T12:02:18+08:00' },
-                    { title: '國防部年初一發MV《時刻準備著》　展現四軍備戰威懾力', link: 'https://www.hk01.com/即時中國/60323020/國防部年初一發mv-時刻準備著-展現四軍備戰威懾力', date: '2026-02-17T12:00:49+08:00' },
-                    { title: '政府就珊瑚白化發公函　私人業主有責移除', link: 'https://www.hk01.com/區域新聞/60322859/政府就珊瑚白化發公函-私人業主有責移除', date: '2026-02-17T11:30:00+08:00' },
-                    { title: '天氣｜天文台料冷鋒周四來襲　周五六市區降至13度', link: 'https://www.hk01.com/生活資訊/60322953/天文台料冷鋒周四來襲-周五六市區降至13度-高地或結冰', date: '2026-02-17T11:00:00+08:00' },
-                    { title: '美斯缺陣｜當局拘4人　涉向球迷賣假飛', link: 'https://www.hk01.com/體育/60322830/美斯缺陣當局拘4人-涉向球迷賣假飛-票務公司遭警告', date: '2026-02-17T10:30:00+08:00' },
-                    { title: '香港迪士尼淨虧損收窄至21億　有信心2027年回本', link: 'https://www.hk01.com/財經快訊/60322685/香港迪士尼淨虧損收窄至21億-有信心2027年回本', date: '2026-02-17T10:00:00+08:00' },
-                    { title: '農曆新年好去處｜維園年宵市場人流暢旺　市民排隊搶購寓意「發財」年桔', link: 'https://www.hk01.com/熱爆話題/60322598/年宵市場人流暢旺-市民排隊搶購寓意發財年桔', date: '2026-02-17T09:30:00+08:00' },
-                    { title: '日本最新入境新規　港人免ETA電子申報延至4月', link: 'https://www.hk01.com/旅遊趣談/60322706/日本最新入境新規-港人免ETA電子申報延至4月', date: '2026-02-17T09:00:00+08:00' },
-                    { title: 'iPhone 16 Pro Max 512GB減價至HK$9,299　先達舖：因乜嘢原因話減就減？', link: 'https://www.hk01.com/數碼生活/60322603/iPhone-16-Pro-Max-512GB減價至HK-9-299-先達舖-因乜嘢原因話減就減', date: '2026-02-17T08:30:00+08:00' }
-                ];
-                
-                displayNews(sampleNews);
-                
-            } catch (e) {
-                content.innerHTML = '<div class="error-msg">暫時載入失敗，請稍後再試</div>';
-            }
-        }
-        
-        function displayNews(news) {
-            const content = document.getElementById('content');
-            
-            if (!news || news.length === 0) {
-                tryAlternative();
-                return;
-            }
-            
-            let html = '';
-            
-            news.forEach(item => {
-                let dateStr = '';
-                try {
-                    const date = new Date(item.date);
-                    dateStr = date.toLocaleString('zh-HK', { 
-                        month: 'short', 
-                        day: 'numeric', 
-                        hour: '2-digit', 
-                        minute: '2-digit' 
-                    });
-                } catch(e) {
-                    dateStr = item.date;
-                }
-                
-                html += `
-                    <div class="news-item" onclick="window.open('${item.link}', '_blank')">
-                        <div class="news-title">${item.title}</div>
-                        <div class="news-meta">
-                            <span>HK01</span>
-                            <span class="news-time">${dateStr}</span>
-                        </div>
-                    </div>
-                `;
-            });
-            
-            content.innerHTML = html;
-            document.getElementById('lastUpdated').textContent = `最後更新: ${new Date().toLocaleString('zh-HK')}`;
-        }
-
-        // Initial load
-        fetchNews();
+        const items = document.querySelectorAll('.news-item');
+        items.forEach((item, i) => {
+            item.onclick = () => window.open(links[i], '_blank');
+        });
     </script>
 </body>
 </html>
